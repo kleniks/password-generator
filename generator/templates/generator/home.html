@@ -1,29 +1,39 @@
+{% load static %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<link rel=" stylesheet" href="{% static "generator/custom.css" %}">
 <div class="container text-center">
 <h1>Password Generator</h1>
 
 <form action="{% url 'password' %}">
-    <select name = "length">
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12" selected="selected">12</option>
-        <option value="13">13</option>
-        <option value="14">14</option>
-        
-    </select> Длинна пароля
+    <div class="cont">
+        <ul class="center">
+        <li>
+        <select name = "length">
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12" selected="selected">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            
+        </select> Длинна пароля
+        </li>
+        <li>
+            <input type="checkbox" name="uppercase"> Uppercase
+        </li>
+        <li>
+            <input type="checkbox" name="numbers"> Numbers
+        </li>
+        <li>
+            <input type="checkbox" name="special_chapters"> Special Chapters
+        </li>
+    </ul>
     <br>
-    <input type="checkbox" name="uppercase"> Uppercase
-    <br>
-    <input type="checkbox" name="numbers"> Numbers
-    <br>
-    <input type="checkbox" name="special_chapters"> Special Chapters
-    <br>
-
-    <input type="submit" class="btn btn-success" value="Generate Password" >
+        <input type="submit" class="btn btn-success" value="Generate Password" >
+    </div>
 </form>
 
 <a href="{% url 'description' %} " class="btn btn-info">Описание</a>

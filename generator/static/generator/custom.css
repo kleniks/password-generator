@@ -1,0 +1,11 @@
+.cont{
+    width: 100%;
+    text-align:  center;
+    }
+.center{
+    display: inline-block
+    }
+li{
+    
+    text-align: left;
+}
